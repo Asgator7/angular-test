@@ -2,9 +2,7 @@
     <div class="steps" *ngFor="let step of steps; let idx = index">
         <div class="step-mark">
             <div class="mark-trace" [class.active]="activeStep >= (idx + 1)"></div>
-            <div class="mark-circle" [class.active]="activeStep >= (idx + 1) || idx === 0" [style.background]="(step?.bg_color ==='default' || !step?.bg_color) ? null :step?.bg_color">
-                <i [ngClass]="step?.icon" [style.color]="(step?.txt_color ==='default' || !step?.txt_color) ? null : step?.txt_color"></i>
-            </div>
+            <div class="mark-circle" [class.active]="activeStep > (idx + 1)" [class.actual]="activeStep === (idx + 1)"></div>
             <div class="mark-trace" [class.active]="activeStep > (idx + 1)"></div>
         </div>
         <div class="step-name" [class.active]="activeStep >= (idx + 1) || idx === 0" [innerHTML]="step?.name"></div>
