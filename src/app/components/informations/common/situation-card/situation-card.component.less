@@ -1,0 +1,41 @@
+@import url('global/css/global-variables.less');
+.initial-situation {
+    background: #ffff;
+    padding: 21px;
+    max-width: 241px;
+    .situation-title {
+        font-weight: 700;
+        color: #000;
+        font-size: 16px;
+        font-family: 'Exo 2', sans-serif;
+    }
+    .situation-description {
+        @insideDescriptionStyle();
+    }
+    .situation-info {
+        .info {
+            display: flex;
+            align-items: center;
+            margin: 20px 0px;
+            .icon {
+                font-size: 21px;
+                margin: 13px 22px 0px 12px;
+            }
+            .checked {
+                color: #00d68f;
+            }
+            .info-value {
+                display: flex;
+                flex-direction: column;
+                label {
+                    @insideDescriptionStyle();
+                }
+                .value {
+                    color: #000;
+                    font-size: 16px;
+                    font-family: 'Exo 2', sans-serif;
+                }
+            }
+        }
+    }
+}

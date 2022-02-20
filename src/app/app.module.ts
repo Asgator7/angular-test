@@ -16,6 +16,7 @@ import { InitialComponent } from './components/informations/initial/initial.comp
 import { DocumentsComponent } from './components/informations/documents/documents.component';
 import { RegisterDataComponent } from './components/informations/register-data/register-data.component';
 import { AdmissionComponent } from './components/informations/admission/admission.component';
+import { SituationCardComponent } from './components/informations/common/situation-card/situation-card.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -33,7 +34,8 @@ const maskConfig: Partial<IConfig> = {
     InitialComponent,
     DocumentsComponent,
     RegisterDataComponent,
-    AdmissionComponent
+    AdmissionComponent,
+    SituationCardComponent
   ],
   imports: [
     BrowserModule,
