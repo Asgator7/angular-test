@@ -1,0 +1,51 @@
+@import url('global/css/global-variables.less');
+.cnt-not-found {
+    display: flex;
+    .not-found-alert {
+        .alert-icon {
+            .icon {
+                font-size: 70px;
+                margin-right: 24px;
+            }
+        }
+    }
+    .not-found-communication {
+        .communication-info {
+            margin-bottom: 26px;
+            .info-title {
+                font-size: 22px;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 400;
+                line-height: 25.78px;
+            }
+            .info-description {
+                max-width: 260px;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 400;
+                line-height: 16.41px;
+                font-size: 14px;
+            }
+        }
+        .communication-buttons {
+            .action-1 {
+                @buttonBlue();
+                width: 83px;
+                height: 31px;
+                font-weight: 600;
+                font-size: 14px;
+                padding: 0;
+                border-radius: 2;
+                margin-right: 22px;
+            }
+            .action-2 {
+                @buttonWhite();
+                width: 83px;
+                height: 31px;
+                font-weight: 600;
+                font-size: 14px;
+                padding: 0;
+                border-radius: 2;
+            }
+        }
+    }
+}

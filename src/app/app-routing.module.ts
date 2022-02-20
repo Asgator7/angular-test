@@ -4,6 +4,7 @@ import { AdmissionComponent } from './components/content/informations/admission/
 import { DocumentsComponent } from './components/content/informations/documents/documents.component';
 import { InitialComponent } from './components/content/informations/initial/initial.component';
 import { RegisterDataComponent } from './components/content/informations/register-data/register-data.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,14 @@ const routes: Routes = [
   {
     path: 'admission',
     component: AdmissionComponent
+  },
+  {
+    path: '404',
+    component: NotFoundComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/404'
   }
 ];
 
