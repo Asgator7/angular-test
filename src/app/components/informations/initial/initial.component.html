@@ -1,1 +1,40 @@
-<p>initial works!</p>
+<div class="cnt-initial">
+    <div class="initial-title">Informe o CPF do futuro cooperado (a)</div>
+    <div class="initial-description">
+        <span>Se necessário, você poderá duplicar uma conta existente ou pausar e retornar este cadastro futuramente.</span>
+        <span>Digite apenas os números (sem pontos ou traços).</span>
+    </div>
+    <div class="initial-search">
+        <form [formGroup]="initialForm" (ngSubmit)="submitCPF()">
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <div class="form-input">
+                    <input type="text" class="form-control" mask="000.000.000-00" formControlName="cpf" name="cpf" placeholder="000.000.000-00">
+                    <button [ngSwitch]="loading" [disabled]="loading" class="btn-search" type="submit">
+                        <span *ngSwitchCase="false">Consultar por CPF</span>
+                        <span *ngSwitchCase="true">
+                            <i class="fa fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+                </div>
+                <span *ngIf="initialForm.get('cpf').hasError('cpfInvalid')" class="errorFormField">Informe um CPF válido</span>
+            </div>
+        </form>
+    </div>
+    <div class="initial-situation">
+        <div class="situation-title"></div>
+        <div class="situation-description"></div>
+        <div class="situation-info">
+            <div class="info">
+                <i></i>
+                <label>Nome</label>
+                <span class="name"></span>
+            </div>
+            <div class="info">
+                <i></i>
+                <label>Situação do CPF</label>
+                <span class="situation"></span>
+            </div>
+        </div>
+    </div>
+</div>

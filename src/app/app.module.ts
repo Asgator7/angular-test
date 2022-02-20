@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
@@ -13,6 +16,11 @@ import { InitialComponent } from './components/informations/initial/initial.comp
 import { DocumentsComponent } from './components/informations/documents/documents.component';
 import { RegisterDataComponent } from './components/informations/register-data/register-data.component';
 import { AdmissionComponent } from './components/informations/admission/admission.component';
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+  // dropSpecialCharacters: false
+};
 
 @NgModule({
   declarations: [
@@ -29,7 +37,9 @@ import { AdmissionComponent } from './components/informations/admission/admissio
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxMaskModule.forRoot(maskConfig),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

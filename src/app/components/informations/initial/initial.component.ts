@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { cpf } from 'cpf-cnpj-validator';
 
 @Component({
   selector: 'app-initial',
@@ -11,9 +14,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InitialComponent implements OnInit {
 
+  public loading = false;
+  public initialForm: any = new FormGroup({
+    cpf: new FormControl(
+      { value: '', disabled: false }, Validators.compose([Validators.required])
+    )
+  });
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  submitCPF(): void {
+    const control = this.initialForm.get('cpf');
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false;
+      cpf.isValid(control.value) ? control.setErrors(null) : control.setErrors({ cpfInvalid: true });
+    }, 2000);
+  }
 }
