@@ -1,0 +1,47 @@
+@import url('global/css/global-variables.less');
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    .header-left {
+        .left-title {
+            font-weight: 700;
+            color: #000;
+            font-size: 36px;
+            font-family: 'Exo 2', sans-serif;
+            text-transform: uppercase;
+        }
+        .left-description {
+            color: #919191;
+            font-family: 'Open Sans', sans-serif;
+        }
+    }
+    .header-right {
+        display: flex;
+        align-items: center;
+    }
+    .right-notification {
+        font-size: 25px;
+        color: @greenAilos;
+    }
+    .right-name {
+        color: @greenAilos;
+        text-transform: uppercase;
+        border: solid 2px @greenAilos;
+        border-radius: 13px;
+        padding: 6px 16px;
+        font-family: 'Exo 2', sans-serif;
+        font-weight: 700;
+        margin: 0px 20px;
+        cursor: pointer;
+    }
+    .right-profile-picture {
+        max-width: 44px;
+        .picture {
+            width: 100%;
+            border-radius: 100%;
+            border: solid 0.5px @greenAilos;
+        }
+    }
+}

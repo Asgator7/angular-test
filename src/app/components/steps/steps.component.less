@@ -1,0 +1,80 @@
+@import url('global/css/global-variables.less');
+.cnt-steps {
+    min-width: 600px;
+    display: flex;
+    margin-top: 35px;
+    .steps {
+        flex: 1;
+        .step-mark {
+            display: flex;
+            align-items: center;
+            .mark-trace {
+                flex: 1;
+                width: 100%;
+                height: 2px;
+                background: @inactiveColor;
+                &.active {
+                    background: @blueAilos;
+                }
+            }
+            .space {
+                width: 0px;
+                height: 25px;
+                display: flex;
+            }
+            .mark-circle {
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                border: solid 2px @inactiveColor;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                pointer-events: none;
+                i {
+                    color: 000;
+                    font-size: 12px;
+                }
+                &.active {
+                    border: solid 2px @blueAilos;
+                    pointer-events: initial;
+                    cursor: pointer;
+                    i {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .step-name {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            margin-top: 5px;
+            font-weight: 700;
+            color: @inactiveColor;
+            &.active {
+                color: @blueAilos;
+                pointer-events: initial;
+                cursor: pointer;
+            }
+            @media screen and (max-width: 500px) {
+                font-size: 8px;
+            }
+        }
+        &:first-of-type {
+            .mark-trace {
+                &:first-of-type {
+                    opacity: 0;
+                }
+            }
+        }
+        &:last-of-type {
+            .mark-trace {
+                &:last-of-type {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

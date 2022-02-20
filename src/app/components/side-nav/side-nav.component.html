@@ -1,0 +1,12 @@
+<div class="cnt-side-nav">
+    <div class="side-nav-menus">
+        <a href="#">
+            <img src="assets/photos/logo_ailos.png" alt="">
+        </a>
+        <ng-container *ngFor="let item of menuItems">
+            <a [routerLink]="item.link">
+                <i class="icons" [ngClass]="item?.icon"></i>
+            </a>
+        </ng-container>
+    </div>
+</div>
