@@ -7,17 +7,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 
-import { SideNavComponent } from './components/side-nav/side-nav.component';
-import { TopNavComponent } from './components/top-nav/top-nav.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { StepsComponent } from './components/steps/steps.component';
+import { SideNavComponent } from './components/menu/side-nav/side-nav.component';
+import { TopNavComponent } from './components/menu/top-nav/top-nav.component';
+import { FooterComponent } from './components/menu/footer/footer.component';
+import { StepsComponent } from './components/content/steps/steps.component';
 import { ContentComponent } from './components/content/content.component';
 import { InitialComponent } from './components/content/informations/initial/initial.component';
 import { DocumentsComponent } from './components/content/informations/documents/documents.component';
 import { RegisterDataComponent } from './components/content/informations/register-data/register-data.component';
 import { AdmissionComponent } from './components/content/informations/admission/admission.component';
 import { SituationCardComponent } from './components/content/informations/common/situation-card/situation-card.component';
-import { ChecklistComponent } from './components/footer/checklist/checklist.component';
+import { ChecklistComponent } from './components/menu/footer/checklist/checklist.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -37,7 +38,8 @@ const maskConfig: Partial<IConfig> = {
     RegisterDataComponent,
     AdmissionComponent,
     SituationCardComponent,
-    ChecklistComponent
+    ChecklistComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

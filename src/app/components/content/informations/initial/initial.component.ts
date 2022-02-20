@@ -33,10 +33,14 @@ export class InitialComponent implements OnInit {
     this.loading = true;
     setTimeout(() => {
       this.loading = false;
-      cpf.isValid(control.value) ? control.setErrors(null) : control.setErrors({ cpfInvalid: true });
-      this.response = {
-        name: 'Mariane de Sousa Oliveira',
-        situation: 'Regular'
+      if (cpf.isValid(control.value)) {
+        control.setErrors(null);
+        this.response = {
+          name: 'Mariane de Sousa Oliveira',
+          situation: 'Regular'
+        };
+      } else {
+        control.setErrors({ cpfInvalid: true });
       }
     }, 2000);
   }
