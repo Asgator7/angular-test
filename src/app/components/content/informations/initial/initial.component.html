@@ -10,7 +10,7 @@
                 <label for="cpf">CPF</label>
                 <div class="form-input">
                     <input type="text" class="form-control" mask="000.000.000-00" formControlName="cpf" name="cpf" placeholder="000.000.000-00">
-                    <button [ngSwitch]="loading" [disabled]="loading" class="btn-search" type="submit">
+                    <button [ngSwitch]="loading" [class.disabled]="response" [disabled]="response" class="btn-search" type="submit">
                         <span *ngSwitchCase="false">Consultar por CPF</span>
                         <span *ngSwitchCase="true">
                             <i class="fa fa-spinner fa-spin"></i>
@@ -20,6 +20,6 @@
                 <span *ngIf="initialForm.get('cpf').hasError('cpfInvalid')" class="errorFormField">Informe um CPF válido</span>
             </div>
         </form>
-        <app-situation-card></app-situation-card>
+        <app-situation-card [info]="response"></app-situation-card>
     </div>
 </div>

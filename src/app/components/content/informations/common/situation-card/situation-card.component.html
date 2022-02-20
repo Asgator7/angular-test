@@ -1,4 +1,4 @@
-<div class="initial-situation">
+<div *ngIf="info" class="initial-situation">
     <div class="situation-title">Situação cadastral do CPF</div>
     <div class="situation-description">Consulta na Receita Federal</div>
     <div class="situation-info">
@@ -6,14 +6,14 @@
             <i class="fa-solid fa-user icon"></i>
             <div class="info-value">
                 <label>Nome</label>
-                <span class="value">Mariane de Sousa Oliveira</span>
+                <span class="value">{{info?.name}}</span>
             </div>
         </div>
         <div class="info">
             <i class="fa-regular fa-circle-check icon checked"></i>
             <div class="info-value">
                 <label>Situação do CPF</label>
-                <span class="value">Regular</span>
+                <span class="value">{{info?.situation}}</span>
             </div>
         </div>
     </div>

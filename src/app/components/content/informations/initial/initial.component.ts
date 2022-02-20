@@ -15,6 +15,7 @@ import { cpf } from 'cpf-cnpj-validator';
 export class InitialComponent implements OnInit {
 
   public loading = false;
+  public response: any;
   public initialForm: any = new FormGroup({
     cpf: new FormControl(
       { value: '', disabled: false }, Validators.compose([Validators.required])
@@ -33,6 +34,10 @@ export class InitialComponent implements OnInit {
     setTimeout(() => {
       this.loading = false;
       cpf.isValid(control.value) ? control.setErrors(null) : control.setErrors({ cpfInvalid: true });
+      this.response = {
+        name: 'Mariane de Sousa Oliveira',
+        situation: 'Regular'
+      }
     }, 2000);
   }
 }
