@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdmissionComponent } from './components/informations/admission/admission.component';
-import { DocumentsComponent } from './components/informations/documents/documents.component';
-import { InitialComponent } from './components/informations/initial/initial.component';
-import { RegisterDataComponent } from './components/informations/register-data/register-data.component';
+import { AdmissionComponent } from './components/content/informations/admission/admission.component';
+import { DocumentsComponent } from './components/content/informations/documents/documents.component';
+import { InitialComponent } from './components/content/informations/initial/initial.component';
+import { RegisterDataComponent } from './components/content/informations/register-data/register-data.component';
 
 const routes: Routes = [
   {
