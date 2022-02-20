@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-steps',
@@ -10,7 +11,9 @@ export class StepsComponent implements OnInit {
   public steps: any = [];
   public activeStep = 3;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.mountSteps();
@@ -20,7 +23,7 @@ export class StepsComponent implements OnInit {
     this.steps = [
       {
         name: 'Início',
-        link: '/initial',
+        link: '/',
         value: 1
       },
       {
@@ -41,4 +44,9 @@ export class StepsComponent implements OnInit {
     ];
   }
 
+  goToStep(step: string, canGo: boolean): void {
+    if (canGo) {
+      this.router.navigate([step]);
+    }
+  }
 }

@@ -1,6 +1,6 @@
 <div class="cnt-steps">
     <div class="steps" *ngFor="let step of steps; let idx = index">
-        <div class="step-mark">
+        <div (click)="goToStep(step?.link, activeStep >= (idx + 1))" class="step-mark">
             <div class="mark-trace" [class.active]="activeStep >= (idx + 1)"></div>
             <div class="mark-circle" [class.active]="activeStep > (idx + 1)" [class.actual]="activeStep === (idx + 1)"></div>
             <div class="mark-trace" [class.active]="activeStep > (idx + 1)"></div>
