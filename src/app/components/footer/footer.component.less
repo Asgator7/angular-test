@@ -1,9 +1,17 @@
 @import url('global/css/global-variables.less');
 .cnt-footer {
     padding: 10px;
+    display: flex;
     .footer-button {
         padding: 10px;
-        button {
+        .button-new-admission {
+            @buttonBlue();
+            padding: 16px 28px;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .button-tips {
             background: #fff;
             border: solid 1px #165C7D;
             padding: 16px 28px;
