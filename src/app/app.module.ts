@@ -5,8 +5,6 @@ import { AppComponent } from './app.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { NgxMaskModule, IConfig } from 'ngx-mask';
-
 import { SideNavComponent } from './components/menu/side-nav/side-nav.component';
 import { TopNavComponent } from './components/menu/top-nav/top-nav.component';
 import { FooterComponent } from './components/menu/footer/footer.component';
@@ -20,11 +18,7 @@ import { SituationCardComponent } from './components/content/informations/common
 import { ChecklistComponent } from './components/menu/footer/checklist/checklist.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
-const maskConfig: Partial<IConfig> = {
-  validation: false,
-  // dropSpecialCharacters: false
-};
-
+import { SharedModule } from './modules/shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,8 +38,8 @@ const maskConfig: Partial<IConfig> = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxMaskModule.forRoot(maskConfig),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

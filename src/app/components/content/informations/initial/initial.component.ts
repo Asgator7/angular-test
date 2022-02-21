@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { SharedService } from 'src/app/services/shared.service';
-import { EventService } from 'src/app/services/event.service';
+import { SharedService } from 'src/app/modules/shared/services/shared.service';
+import { EventService } from 'src/app/modules/shared/services/event.service';
 
 @Component({
   selector: 'app-initial',
