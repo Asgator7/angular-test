@@ -20,6 +20,10 @@
                 <span *ngIf="initialForm.get('cpf').hasError('cpfInvalid')" class="errorFormField">Informe um CPF válido</span>
             </div>
         </form>
-        <app-situation-card [info]="response"></app-situation-card>
+        <div class="cards">
+            <app-situation-card [info]="response?.register"></app-situation-card>
+            <app-situation-card [info]="response?.application"></app-situation-card>
+            <app-situation-card [info]="response?.checking"></app-situation-card>
+        </div>
     </div>
 </div>

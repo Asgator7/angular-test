@@ -1,20 +1,46 @@
-<div *ngIf="info" class="initial-situation">
-    <div class="situation-title">Situação cadastral do CPF</div>
-    <div class="situation-description">Consulta na Receita Federal</div>
-    <div class="situation-info">
-        <div class="info">
-            <i class="fa-solid fa-user icon"></i>
-            <div class="info-value">
-                <label>Nome</label>
-                <span class="value">{{info?.name}}</span>
+<ng-container [ngSwitch]="info?.type">
+    <ng-container *ngSwitchCase="'register-situation'">
+        <div class="initial-situation">
+            <div class="situation-title">Situação cadastral do CPF</div>
+            <div class="situation-description">Consulta na Receita Federal</div>
+            <div class="situation-info">
+                <div class="info">
+                    <i class="fa-solid fa-user icon"></i>
+                    <div class="info-value">
+                        <label>Nome</label>
+                        <span class="value">{{info?.name}}</span>
+                    </div>
+                </div>
+                <div class="info">
+                    <i class="fa-regular fa-circle-check icon checked"></i>
+                    <div class="info-value">
+                        <label>Situação do CPF</label>
+                        <span class="value">{{info?.situation}}</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="info">
-            <i class="fa-regular fa-circle-check icon checked"></i>
-            <div class="info-value">
-                <label>Situação do CPF</label>
-                <span class="value">{{info?.situation}}</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'cooperative'">
+        <div class="initial-situation">
+            <div class="situation-title">{{info?.title}}</div>
+            <div class="situation-description">Cooperativa Viacredi</div>
+            <div class="situation-info cooperative">
+                <div class="info">
+                    <i class="fa-regular fa-credit-card icon"></i>
+                    <div class="info-value">
+                        <label>Número da conta</label>
+                        <span class="value">{{info?.account_number}}</span>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="info-value">
+                        <span class="value">
+                            <a>Duplicar conta</a>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </ng-container>
+</ng-container>

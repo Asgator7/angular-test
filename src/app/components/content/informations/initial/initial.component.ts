@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
-import { cpf } from 'cpf-cnpj-validator';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-initial',
@@ -22,7 +21,9 @@ export class InitialComponent implements OnInit {
     )
   });
 
-  constructor() { }
+  constructor(
+    private sharedService: SharedService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -31,17 +32,17 @@ export class InitialComponent implements OnInit {
   submitCPF(): void {
     const control = this.initialForm.get('cpf');
     this.loading = true;
-    setTimeout(() => {
+    setTimeout(() => { // Set timeout só para aparecer a animação de carregando 
+      this.sharedService.verifyCpfAndGetName(control.value).subscribe(
+        (response: any) => {
+          this.response = response;
+          console.log(this.response)
+        },
+        (cpfInvalid: any) => {
+          control.setErrors({ cpfInvalid });
+        }
+      );
       this.loading = false;
-      if (cpf.isValid(control.value)) {
-        control.setErrors(null);
-        this.response = {
-          name: 'Mariane de Sousa Oliveira',
-          situation: 'Regular'
-        };
-      } else {
-        control.setErrors({ cpfInvalid: true });
-      }
     }, 2000);
   }
 }
