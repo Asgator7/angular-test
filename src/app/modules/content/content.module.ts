@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ContentRoutingModule } from './content-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { StepsComponent } from './content/steps/steps.component';
-import { ContentComponent } from './content/content.component';
-import { InitialComponent } from './content/informations/initial/initial.component';
-import { DocumentsComponent } from './content/informations/documents/documents.component';
-import { RegisterDataComponent } from './content/informations/register-data/register-data.component';
-import { AdmissionComponent } from './content/informations/admission/admission.component';
-import { SituationCardComponent } from './content/informations/common/situation-card/situation-card.component';
+import { StepsComponent } from './components/steps/steps.component';
+import { ContentComponent } from './components/content.component';
+import { InitialComponent } from './components/informations/initial/initial.component';
+import { DocumentsComponent } from './components/informations/documents/documents.component';
+import { RegisterDataComponent } from './components/informations/register-data/register-data.component';
+import { AdmissionComponent } from './components/informations/admission/admission.component';
+import { SituationCardComponent } from './components/informations/common/situation-card/situation-card.component';
 
 @NgModule({
   declarations: [
