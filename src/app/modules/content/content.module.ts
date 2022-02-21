@@ -11,6 +11,8 @@ import { RegisterDataComponent } from './components/informations/register-data/r
 import { AdmissionComponent } from './components/informations/admission/admission.component';
 import { SituationCardComponent } from './components/informations/common/situation-card/situation-card.component';
 
+import { SharedModule } from './../shared/shared.module';
+
 @NgModule({
   declarations: [
     StepsComponent,
@@ -24,7 +26,8 @@ import { SituationCardComponent } from './components/informations/common/situati
   imports: [
     CommonModule,
     ContentRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class ContentModule { }

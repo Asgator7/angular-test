@@ -5,7 +5,6 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
-  // dropSpecialCharacters: false
 };
 
 
