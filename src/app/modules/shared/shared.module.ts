@@ -14,6 +14,9 @@ const maskConfig: Partial<IConfig> = {
   imports: [
     CommonModule,
     NgxMaskModule.forRoot(maskConfig)
+  ],
+  exports: [
+    NgxMaskModule
   ]
 })
 export class SharedModule { }
