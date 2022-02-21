@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class StepsComponent implements OnInit {
 
   public steps: any = [];
-  public activeStep = 3;
+  public activeStep = 1;
 
   constructor(
     private router: Router
