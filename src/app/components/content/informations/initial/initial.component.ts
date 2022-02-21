@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { SharedService } from 'src/app/services/shared.service';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-initial',
@@ -22,21 +23,28 @@ export class InitialComponent implements OnInit {
   });
 
   constructor(
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private eventService: EventService
   ) { }
 
   ngOnInit(): void {
+    this.eventService.event('newAdmission').subscribe(
+      () => {
+        this.response = null;
+        this.initialForm.reset();
+      }
+    );
   }
 
 
   submitCPF(): void {
     const control = this.initialForm.get('cpf');
     this.loading = true;
-    setTimeout(() => { // Set timeout só para aparecer a animação de carregando 
+    setTimeout(() => { // Set timeout só para aparecer a animação de carregando
       this.sharedService.verifyCpfAndGetName(control.value).subscribe(
         (response: any) => {
           this.response = response;
-          console.log(this.response)
+          this.eventService.event('cpfLoaded').emit();
         },
         (cpfInvalid: any) => {
           control.setErrors({ cpfInvalid });

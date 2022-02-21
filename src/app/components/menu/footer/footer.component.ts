@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  public isLoaded = false;
+
+  constructor(
+    private eventService: EventService
+  ) { }
 
   ngOnInit(): void {
+    this.eventService.event('cpfLoaded').subscribe(
+      () => {
+        this.isLoaded = true;
+      }
+    );
+  }
+
+  newAdmission(): void {
+    this.isLoaded = false;
+    this.eventService.event('newAdmission').emit();
   }
 
 }
